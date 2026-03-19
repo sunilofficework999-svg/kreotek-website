@@ -2,26 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --primary-50: #fef2f2;
+    --primary-100: #fde3e3;
+    --primary-200: #fcc9c9;
+    --primary-300: #f9a0a0;
+    --primary-400: #e84545;
+    --primary-500: #8d0802;
+    --primary-600: #7a0702;
+    --primary-700: #650601;
+    --primary-800: #530501;
+    --primary-900: #420401;
+    --gradient-from: #8d0802;
+    --gradient-to: #ef4444;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-gray-900 antialiased dark:bg-gray-950 dark:text-gray-100;
+    font-family: "Inter", system-ui, sans-serif;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--primary-500) 20%, transparent);
+    color: var(--primary-900);
+  }
+
+  .dark ::selection {
+    color: var(--primary-100);
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
+@layer components {
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(to right, var(--gradient-from), var(--gradient-to));
+  }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .glass-card {
+    @apply bg-white border border-gray-200 rounded-2xl shadow-sm dark:bg-gray-900 dark:border-gray-800;
+  }
+
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8 py-20 lg:py-28;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto w-full;
   }
 }
