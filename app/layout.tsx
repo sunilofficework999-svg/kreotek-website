@@ -71,7 +71,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <head>
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/favicon.png" type="image/png" />
       </head>
       <body className="font-sans antialiased bg-white text-gray-900">
         <ThemeProvider>

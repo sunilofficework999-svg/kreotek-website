@@ -43,7 +43,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
             <img
-              src="/images/logo.svg"
+              src="/images/logo.png"
               alt={siteConfig.name}
               className="h-10 w-auto dark:brightness-0 dark:invert"
             />

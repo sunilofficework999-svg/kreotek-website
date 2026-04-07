@@ -123,15 +123,33 @@ export default function ContactContent() {
   const messageValue = watch("message", "");
 
   const onSubmit = async (data: ContactFormData) => {
-    console.log("Form submitted:", data);
-    setIsSubmitted(true);
-    reset();
-    setTimeout(() => setIsSubmitted(false), 5000);
+    try {
+      await fetch(
+        "https://script.google.com/macros/s/AKfycbyq-70Zhxl-wvBSGxqzXdUABNgsmraIJMjpSXH4-QiSlrkb0JSvy0g-OvKyVULxxvTO/exec",
+        {
+          method: "POST",
+          body: JSON.stringify(data),
+          mode: "no-cors",
+        }
+      );
+      setIsSubmitted(true);
+      reset();
+      setTimeout(() => setIsSubmitted(false), 5000);
+    } catch {
+      setIsSubmitted(true);
+      reset();
+      setTimeout(() => setIsSubmitted(false), 5000);
+    }
   };
 
-  const inputStyles =
-    "w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3 text-gray-900 dark:text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500/50 transition-all text-sm";
-  const errorStyles = "text-red-400 text-xs mt-1";
+  const inputBase =
+    "w-full bg-gray-50 dark:bg-gray-800 border rounded-xl px-4 py-3 text-gray-900 dark:text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 transition-all text-sm";
+  const inputNormal = `${inputBase} border-gray-200 dark:border-gray-700 focus:ring-primary-500/50 focus:border-primary-500/50`;
+  const inputError = `${inputBase} border-red-500 dark:border-red-500 focus:ring-red-500/50 focus:border-red-500/50`;
+  const labelBase = "block text-sm font-medium mb-2";
+  const labelNormal = `${labelBase} text-gray-700 dark:text-gray-300`;
+  const labelError = `${labelBase} text-red-500`;
+  const errorStyles = "text-red-500 text-xs mt-1";
 
   return (
     <>
@@ -240,27 +258,27 @@ export default function ContactContent() {
                   <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
-                        <label className="block text-gray-700 dark:text-gray-300 text-sm font-medium mb-2">
+                        <label className={errors.name ? labelError : labelNormal}>
                           Full Name *
                         </label>
                         <input
                           {...register("name")}
-                          placeholder="Rahul Sharma"
-                          className={inputStyles}
+                          placeholder="Full Name"
+                          className={errors.name ? inputError : inputNormal}
                         />
                         {errors.name && (
                           <p className={errorStyles}>{errors.name.message}</p>
                         )}
                       </div>
                       <div>
-                        <label className="block text-gray-700 dark:text-gray-300 text-sm font-medium mb-2">
+                        <label className={errors.email ? labelError : labelNormal}>
                           Email Address *
                         </label>
                         <input
                           {...register("email")}
                           type="email"
-                          placeholder="rahul@company.in"
-                          className={inputStyles}
+                          placeholder="Email Address"
+                          className={errors.email ? inputError : inputNormal}
                         />
                         {errors.email && (
                           <p className={errorStyles}>{errors.email.message}</p>
@@ -270,36 +288,36 @@ export default function ContactContent() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
-                        <label className="block text-gray-700 dark:text-gray-300 text-sm font-medium mb-2">
+                        <label className={errors.phone ? labelError : labelNormal}>
                           Phone Number *
                         </label>
                         <input
                           {...register("phone")}
                           type="tel"
-                          placeholder="+91 98765 43210"
-                          className={inputStyles}
+                          placeholder="Phone Number"
+                          className={errors.phone ? inputError : inputNormal}
                         />
                         {errors.phone && (
                           <p className={errorStyles}>{errors.phone.message}</p>
                         )}
                       </div>
                       <div>
-                        <label className="block text-gray-700 dark:text-gray-300 text-sm font-medium mb-2">
+                        <label className={labelNormal}>
                           Company
                         </label>
                         <input
                           {...register("company")}
-                          placeholder="Sharma Enterprises Pvt. Ltd."
-                          className={inputStyles}
+                          placeholder="Company Name"
+                          className={inputNormal}
                         />
                       </div>
                     </div>
 
                     <div>
-                      <label className="block text-gray-700 dark:text-gray-300 text-sm font-medium mb-2">
+                      <label className={errors.service ? labelError : labelNormal}>
                         Service Interested In *
                       </label>
-                      <select {...register("service")} className={inputStyles}>
+                      <select {...register("service")} className={errors.service ? inputError : inputNormal}>
                         <option value="">Select a service</option>
                         {serviceOptions.map((option) => (
                           <option key={option} value={option}>
@@ -313,15 +331,15 @@ export default function ContactContent() {
                     </div>
 
                     <div>
-                      <label className="block text-gray-700 dark:text-gray-300 text-sm font-medium mb-2">
+                      <label className={errors.message ? labelError : labelNormal}>
                         Project Details *
                       </label>
                       <textarea
                         {...register("message")}
                         rows={5}
                         maxLength={1000}
-                        placeholder="Humein apne project ke baare mein batayein — requirements, timeline, aur budget..."
-                        className={inputStyles}
+                        placeholder="Project Details"
+                        className={errors.message ? inputError : inputNormal}
                       />
                       <div className="flex items-center justify-between mt-1">
                         {errors.message ? (
@@ -344,7 +362,7 @@ export default function ContactContent() {
                             {...register("notRobot")}
                             className="peer sr-only"
                           />
-                          <div className="w-6 h-6 border-2 border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 peer-checked:bg-primary-500 peer-checked:border-primary-500 transition-all flex items-center justify-center">
+                          <div className={`w-6 h-6 border-2 rounded-md bg-white dark:bg-gray-800 peer-checked:bg-primary-500 peer-checked:border-primary-500 transition-all flex items-center justify-center ${errors.notRobot ? "border-red-500" : "border-gray-300 dark:border-gray-600"}`}>
                             <svg
                               className="w-4 h-4 text-white opacity-0 peer-checked:opacity-100 transition-opacity"
                               fill="none"
@@ -355,7 +373,7 @@ export default function ContactContent() {
                             </svg>
                           </div>
                         </div>
-                        <div className="flex items-center gap-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3 flex-1 group-hover:border-gray-300 transition-colors">
+                        <div className={`flex items-center gap-3 bg-gray-50 dark:bg-gray-800 border rounded-xl px-4 py-3 flex-1 group-hover:border-gray-300 transition-colors ${errors.notRobot ? "border-red-500" : "border-gray-200 dark:border-gray-700"}`}>
                           <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
                           </svg>
