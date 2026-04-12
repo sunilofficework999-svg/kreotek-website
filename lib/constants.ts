@@ -5,8 +5,8 @@ export const siteConfig = {
     "Enterprise-grade IT Services, SaaS Solutions & CRM Platform. We build scalable digital products that transform businesses globally.",
   url: "https://kreotek.com",
   ogImage: "/images/og-image.png",
-  email: "contact@kreotek.com",
-  phone: "+91 98765 43210",
+  email: "kreotektechnologies@gmail.com",
+  phone: "+91 8512020175",
   address: "Plot No. 392, Sector 74, Faridabad, Haryana - 121004",
   social: {
     linkedin: "https://linkedin.com/company/kreotek",
