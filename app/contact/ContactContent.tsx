@@ -29,8 +29,8 @@ const serviceOptions = [
   "IT Consulting",
   "UI/UX Design",
   "VisitorDesk - Entry/Exit System",
-  "CareDesk - Clinic System",
-  "CRM Platform",
+  "OrderDesk - QR Table Ordering System",
+  "TrackDesk - Employee Monitoring & Task Management",
   "Other",
 ];
 

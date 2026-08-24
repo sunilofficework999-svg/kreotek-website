@@ -10,9 +10,10 @@ const footerLinks = {
   ],
   solutions: [
     { label: "SaaS Solutions", href: "/saas-solutions" },
-    { label: "CRM Platform", href: "/crm-platform" },
+    { label: "VisitorDesk", href: "/saas-solutions" },
+    { label: "OrderDesk", href: "/saas-solutions" },
+    { label: "TrackDesk", href: "/saas-solutions" },
     { label: "Web Development", href: "/services" },
-    { label: "Cloud Solutions", href: "/services" },
   ],
   services: [
     { label: "Mobile Apps", href: "/services" },

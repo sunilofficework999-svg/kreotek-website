@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "Kreotek Technologies",
   legalName: "Kreotek Technologies Private Limited",
   description:
-    "Enterprise-grade IT Services, SaaS Solutions & CRM Platform. We build scalable digital products that transform businesses globally.",
+    "Enterprise-grade IT Services & SaaS Solutions. We build scalable digital products — including VisitorDesk, OrderDesk and TrackDesk — that transform businesses globally.",
   url: "https://kreotek.com",
   ogImage: "/images/og-image.png",
   email: "sales@kreotek.com",
@@ -21,7 +21,6 @@ export const navLinks = [
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "SaaS Solutions", href: "/saas-solutions" },
-  { label: "CRM Platform", href: "/crm-platform" },
   { label: "Contact", href: "/contact" },
 ] as const;
 
@@ -90,22 +89,40 @@ export const products = [
     color: "blue",
   },
   {
-    name: "CareDesk",
-    fullName: "CareDesk - Clinic System",
-    tagline: "Complete Healthcare Practice Management",
+    name: "OrderDesk",
+    fullName: "OrderDesk - QR Table Ordering System",
+    tagline: "Contactless Ordering & Payments for Restaurants",
     description:
-      "End-to-end clinic management platform designed for healthcare providers. Manage patients, appointments, billing, and medical records with ease and compliance.",
+      "All-in-one QR table ordering platform for restaurants, cafés, and cloud kitchens. Guests scan, order, and pay from their phone — your KOT prints in real time, no app install required.",
     features: [
-      "Patient Registration & Records",
-      "Appointment Scheduling",
-      "Electronic Health Records",
-      "Billing & Invoicing",
-      "Prescription Management",
-      "Lab & Reports Integration",
-      "Multi-clinic Support",
-      "HIPAA Compliant Security",
+      "QR Menu & Table Ordering",
+      "Live KOT to Kitchen & Bar",
+      "UPI & Card Payments",
+      "Captain & Waiter App",
+      "Menu, Modifiers & Combos",
+      "Discounts, Coupons & GST Bills",
+      "Multi-outlet & Multi-language",
+      "Sales, Item & Staff Reports",
     ],
     color: "emerald",
+  },
+  {
+    name: "TrackDesk",
+    fullName: "TrackDesk - Employee Monitoring & Task Management",
+    tagline: "Laptop Activity Monitoring & Task Assignment for Modern Teams",
+    description:
+      "A workforce productivity platform that tracks what happens on company laptops and keeps work moving. Monitor app and website usage, capture periodic screenshots, log attendance and idle time, and assign tasks with deadlines — full visibility across in-office and remote teams from one dashboard.",
+    features: [
+      "Laptop Activity Monitoring",
+      "App & Website Usage Tracking",
+      "Auto Screenshots & Idle Time",
+      "Task Assignment & Deadlines",
+      "Attendance & Work Hour Logs",
+      "Project & Timesheet Tracking",
+      "Productivity Scores & Reports",
+      "Team, Role & Department Controls",
+    ],
+    color: "violet",
   },
 ];
 
@@ -119,9 +136,9 @@ export const testimonials = [
   },
   {
     name: "Priya Sharma",
-    role: "Director, HealthFirst Clinics",
+    role: "Owner, Urban Spice Café",
     content:
-      "CareDesk transformed how we operate. Patient wait times dropped by 40% and our staff productivity doubled. Outstanding product.",
+      "OrderDesk cut our table-turn time in half. Guests scan, order, pay — KOTs hit the kitchen instantly. Our weekend covers jumped 35% without adding staff.",
     rating: 5,
   },
   {
@@ -134,7 +151,7 @@ export const testimonials = [
 ];
 
 export const stats = [
-  { value: "2", label: "SaaS Products" },
+  { value: "3", label: "SaaS Products" },
   { value: "6+", label: "Service Offerings" },
   { value: "99.9%", label: "Uptime SLA" },
   { value: "24/7", label: "Support Available" },

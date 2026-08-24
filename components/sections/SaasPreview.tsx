@@ -5,56 +5,57 @@ import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Button from "@/components/ui/Button";
 import { products } from "@/lib/constants";
+import { themeFor } from "@/components/ui/productTheme";
 
-/* ── CareDesk Phone Mockups ── */
-function CareDeskPhones() {
+/* ── OrderDesk Phone Mockups ── */
+function OrderDeskPhones() {
   return (
-    <div className="flex items-center justify-center gap-2 sm:gap-3 md:gap-5 py-6 bg-gradient-to-br from-primary-500/5 via-red-50 to-pink-50 dark:from-primary-500/10 dark:via-gray-900 dark:to-gray-900 rounded-2xl px-2 sm:px-4 overflow-x-auto">
-      {/* Phone 1: Dashboard */}
+    <div className="flex items-center justify-center gap-2 sm:gap-3 md:gap-5 py-6 bg-gradient-to-br from-emerald-50 via-amber-50 to-orange-50 dark:from-emerald-500/10 dark:via-gray-900 dark:to-gray-900 rounded-2xl px-2 sm:px-4 overflow-x-auto">
+      {/* Phone 1: Outlet Dashboard */}
       <div className="w-[100px] sm:w-[120px] md:w-[150px] flex-shrink-0" style={{ transform: "rotate(-5deg)" }}>
         <div className="bg-white dark:bg-gray-800 rounded-[20px] shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden">
-          <div className="bg-primary-500 h-6 flex items-center justify-center">
-            <span className="text-white text-[7px] font-bold">Dashboard</span>
+          <div className="bg-emerald-600 h-6 flex items-center justify-center">
+            <span className="text-white text-[7px] font-bold">Live Outlet</span>
           </div>
           <div className="p-2.5 space-y-2">
-            <div className="text-[8px] font-bold text-black dark:text-white">Overview</div>
+            <div className="text-[8px] font-bold text-black dark:text-white">Today</div>
             <div className="grid grid-cols-2 gap-1.5">
-              <div className="bg-primary-500/10 rounded-lg p-1.5 text-center">
-                <div className="text-primary-600 font-black text-sm">24</div>
-                <div className="text-[6px] text-gray-500">Patients</div>
-              </div>
               <div className="bg-emerald-500/10 rounded-lg p-1.5 text-center">
-                <div className="text-emerald-500 font-black text-sm">8</div>
-                <div className="text-[6px] text-gray-500">Doctors</div>
+                <div className="text-emerald-600 font-black text-sm">₹42K</div>
+                <div className="text-[6px] text-gray-500">Sales</div>
               </div>
               <div className="bg-amber-500/10 rounded-lg p-1.5 text-center">
-                <div className="text-amber-500 font-black text-sm">12</div>
-                <div className="text-[6px] text-gray-500">Today</div>
+                <div className="text-amber-600 font-black text-sm">86</div>
+                <div className="text-[6px] text-gray-500">Orders</div>
+              </div>
+              <div className="bg-orange-500/10 rounded-lg p-1.5 text-center">
+                <div className="text-orange-500 font-black text-sm">18</div>
+                <div className="text-[6px] text-gray-500">Tables</div>
               </div>
               <div className="bg-purple-100 dark:bg-purple-500/20 rounded-lg p-1.5 text-center">
-                <div className="text-purple-600 font-black text-sm">96%</div>
-                <div className="text-[6px] text-gray-500">Uptime</div>
+                <div className="text-purple-600 font-black text-sm">₹489</div>
+                <div className="text-[6px] text-gray-500">Avg Bill</div>
               </div>
             </div>
             <div className="bg-gray-50 dark:bg-gray-700/50 rounded-lg p-1.5">
-              <div className="text-[7px] font-semibold text-black dark:text-white mb-1">Revenue</div>
+              <div className="text-[7px] font-semibold text-black dark:text-white mb-1">Hourly Sales</div>
               <div className="flex items-end gap-0.5 h-6">
-                <div className="bg-primary-500/30 rounded-sm flex-1" style={{ height: "40%" }} />
-                <div className="bg-primary-500/40 rounded-sm flex-1" style={{ height: "60%" }} />
-                <div className="bg-primary-500/50 rounded-sm flex-1" style={{ height: "45%" }} />
-                <div className="bg-primary-500/60 rounded-sm flex-1" style={{ height: "80%" }} />
-                <div className="bg-primary-500 rounded-sm flex-1" style={{ height: "100%" }} />
-                <div className="bg-primary-500/70 rounded-sm flex-1" style={{ height: "70%" }} />
+                <div className="bg-emerald-500/30 rounded-sm flex-1" style={{ height: "30%" }} />
+                <div className="bg-emerald-500/40 rounded-sm flex-1" style={{ height: "55%" }} />
+                <div className="bg-emerald-500/50 rounded-sm flex-1" style={{ height: "70%" }} />
+                <div className="bg-emerald-500/60 rounded-sm flex-1" style={{ height: "85%" }} />
+                <div className="bg-emerald-500 rounded-sm flex-1" style={{ height: "100%" }} />
+                <div className="bg-emerald-500/70 rounded-sm flex-1" style={{ height: "75%" }} />
               </div>
             </div>
             <div className="space-y-1">
               <div className="bg-gray-50 dark:bg-gray-700/50 rounded p-1 flex items-center gap-1">
-                <div className="w-3 h-3 bg-primary-500/20 rounded-full" />
-                <div className="text-[6px] text-gray-600 dark:text-gray-400">New appointment - 10:30</div>
+                <div className="w-3 h-3 bg-emerald-500/20 rounded-full" />
+                <div className="text-[6px] text-gray-600 dark:text-gray-400">T-07 paid ₹620 · UPI</div>
               </div>
               <div className="bg-gray-50 dark:bg-gray-700/50 rounded p-1 flex items-center gap-1">
-                <div className="w-3 h-3 bg-emerald-500/20 rounded-full" />
-                <div className="text-[6px] text-gray-600 dark:text-gray-400">Lab results ready</div>
+                <div className="w-3 h-3 bg-amber-500/20 rounded-full" />
+                <div className="text-[6px] text-gray-600 dark:text-gray-400">T-12 new order</div>
               </div>
             </div>
           </div>
@@ -66,103 +67,115 @@ function CareDeskPhones() {
         </div>
       </div>
 
-      {/* Phone 2: Appointments (center, larger) */}
+      {/* Phone 2: Guest QR Menu (center, larger) */}
       <div className="w-[110px] sm:w-[135px] md:w-[170px] flex-shrink-0 relative z-10" style={{ transform: "translateY(-8px)" }}>
         <div className="bg-white dark:bg-gray-800 rounded-[24px] shadow-2xl border-2 border-gray-200 dark:border-gray-700 overflow-hidden">
-          <div className="bg-primary-500 h-7 flex items-center justify-center gap-2">
-            <span className="text-white text-[7px]">CareDesk</span>
+          <div className="bg-emerald-600 h-7 flex items-center justify-center gap-2">
+            <span className="text-white text-[7px]">OrderDesk</span>
             <span className="text-white/60 text-[7px]">|</span>
-            <span className="text-white text-[7px] font-bold">Appointments</span>
+            <span className="text-white text-[7px] font-bold">Table 07</span>
           </div>
           <div className="p-3 space-y-2">
             <div className="flex items-center justify-between">
-              <div className="text-[9px] font-bold text-black dark:text-white">Today&apos;s Schedule</div>
-              <div className="text-[7px] text-primary-600 font-medium">Feb 20</div>
+              <div className="text-[9px] font-bold text-black dark:text-white">Urban Spice Café</div>
+              <div className="text-[7px] text-emerald-600 font-medium">Open</div>
             </div>
-            {/* Appointment 1 */}
-            <div className="bg-primary-500/5 border border-primary-500/20 rounded-xl p-2 space-y-1">
-              <div className="flex items-center justify-between">
-                <div className="text-[8px] font-bold text-black dark:text-white">Dr. Sharma</div>
-                <span className="text-[6px] bg-green-100 dark:bg-green-500/20 text-green-700 dark:text-green-400 px-1.5 py-0.5 rounded-full">Active</span>
-              </div>
-              <div className="text-[7px] text-gray-500">10:00 AM - Cardiology</div>
-              <div className="flex items-center gap-1 mt-0.5">
-                <div className="w-3 h-3 bg-gray-200 dark:bg-gray-600 rounded-full" />
-                <div className="text-[6px] text-gray-400">Rahul Verma</div>
-              </div>
-            </div>
-            {/* Appointment 2 */}
+            {/* Menu Item 1 */}
             <div className="bg-emerald-500/5 border border-emerald-500/20 rounded-xl p-2 space-y-1">
               <div className="flex items-center justify-between">
-                <div className="text-[8px] font-bold text-black dark:text-white">Dr. Patel</div>
-                <span className="text-[6px] bg-amber-100 dark:bg-amber-500/20 text-amber-600 dark:text-amber-400 px-1.5 py-0.5 rounded-full">Upcoming</span>
+                <div className="text-[8px] font-bold text-black dark:text-white">Paneer Tikka</div>
+                <span className="text-[6px] bg-emerald-100 dark:bg-emerald-500/20 text-emerald-700 dark:text-emerald-400 px-1.5 py-0.5 rounded-full">Veg</span>
               </div>
-              <div className="text-[7px] text-gray-500">11:30 AM - Dermatology</div>
-              <div className="flex items-center gap-1 mt-0.5">
-                <div className="w-3 h-3 bg-gray-200 dark:bg-gray-600 rounded-full" />
-                <div className="text-[6px] text-gray-400">Priya Singh</div>
+              <div className="text-[7px] text-gray-500">Smoky, mint chutney · ₹260</div>
+              <div className="flex items-center justify-between mt-0.5">
+                <div className="text-[6px] text-gray-400">★ 4.8 · Bestseller</div>
+                <div className="text-[7px] bg-emerald-600 text-white px-1.5 py-0.5 rounded-md font-bold">ADD</div>
               </div>
             </div>
-            {/* Appointment 3 */}
-            <div className="bg-purple-50 dark:bg-purple-500/10 border border-purple-100 dark:border-purple-500/20 rounded-xl p-2 space-y-1">
+            {/* Menu Item 2 */}
+            <div className="bg-amber-500/5 border border-amber-500/20 rounded-xl p-2 space-y-1">
               <div className="flex items-center justify-between">
-                <div className="text-[8px] font-bold text-black dark:text-white">Dr. Gupta</div>
-                <span className="text-[6px] bg-purple-100 dark:bg-purple-500/20 text-purple-600 dark:text-purple-400 px-1.5 py-0.5 rounded-full">2:00 PM</span>
+                <div className="text-[8px] font-bold text-black dark:text-white">Butter Chicken</div>
+                <span className="text-[6px] bg-red-100 dark:bg-red-500/20 text-red-600 dark:text-red-400 px-1.5 py-0.5 rounded-full">Non-Veg</span>
               </div>
-              <div className="text-[7px] text-gray-500">Orthopaedics</div>
+              <div className="text-[7px] text-gray-500">Half · Full · ₹320</div>
+              <div className="flex items-center justify-between mt-0.5">
+                <div className="text-[6px] text-gray-400">★ 4.9 · Chef pick</div>
+                <div className="flex items-center gap-1 text-[7px] font-bold">
+                  <span className="w-3 h-3 bg-emerald-600 text-white rounded flex items-center justify-center">−</span>
+                  <span className="text-black dark:text-white">2</span>
+                  <span className="w-3 h-3 bg-emerald-600 text-white rounded flex items-center justify-center">+</span>
+                </div>
+              </div>
+            </div>
+            {/* Menu Item 3 */}
+            <div className="bg-orange-50 dark:bg-orange-500/10 border border-orange-100 dark:border-orange-500/20 rounded-xl p-2 space-y-1">
+              <div className="flex items-center justify-between">
+                <div className="text-[8px] font-bold text-black dark:text-white">Masala Chai</div>
+                <span className="text-[6px] bg-orange-100 dark:bg-orange-500/20 text-orange-600 dark:text-orange-400 px-1.5 py-0.5 rounded-full">₹60</span>
+              </div>
+              <div className="text-[7px] text-gray-500">Cutting · Regular · Pot</div>
               <div className="flex items-center gap-1 mt-0.5">
-                <div className="w-3 h-3 bg-gray-200 dark:bg-gray-600 rounded-full" />
-                <div className="text-[6px] text-gray-400">Amit Kumar</div>
+                <div className="text-[6px] text-gray-400">Adrak, elaichi, kullhad</div>
               </div>
             </div>
           </div>
-          <div className="bg-gray-50 dark:bg-gray-700/50 h-6 flex items-center justify-center gap-4">
-            <svg className="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
-            <svg className="w-3 h-3 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-            <svg className="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+          <div className="bg-emerald-600 h-6 flex items-center justify-center gap-2">
+            <span className="text-white text-[7px] font-bold">View Cart</span>
+            <span className="text-white/80 text-[7px]">·</span>
+            <span className="text-white text-[7px] font-bold">₹640</span>
           </div>
         </div>
       </div>
 
-      {/* Phone 3: Patient Record */}
+      {/* Phone 3: Live KOT / Captain */}
       <div className="w-[100px] sm:w-[120px] md:w-[150px] flex-shrink-0" style={{ transform: "rotate(5deg)" }}>
         <div className="bg-white dark:bg-gray-800 rounded-[20px] shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden">
-          <div className="bg-primary-500 h-6 flex items-center justify-center">
-            <span className="text-white text-[7px] font-bold">Patient Record</span>
+          <div className="bg-emerald-600 h-6 flex items-center justify-center">
+            <span className="text-white text-[7px] font-bold">Live KOT</span>
           </div>
           <div className="p-2.5 space-y-2">
             <div className="flex items-center gap-2">
-              <div className="w-7 h-7 bg-primary-500/10 rounded-full flex items-center justify-center">
-                <span className="text-primary-600 text-[8px] font-bold">RV</span>
+              <div className="w-7 h-7 bg-emerald-500/10 rounded-full flex items-center justify-center">
+                <span className="text-emerald-600 text-[8px] font-bold">T07</span>
               </div>
               <div>
-                <div className="text-[8px] font-bold text-black dark:text-white">Rahul Verma</div>
-                <div className="text-[6px] text-gray-400">ID: CD-2024-001</div>
+                <div className="text-[8px] font-bold text-black dark:text-white">Order #OD-1284</div>
+                <div className="text-[6px] text-gray-400">Captain: Ravi</div>
               </div>
             </div>
             <div className="grid grid-cols-2 gap-1">
               <div className="bg-gray-50 dark:bg-gray-700/50 rounded p-1 text-center">
-                <div className="text-[6px] text-gray-400">Age</div>
-                <div className="text-[8px] font-bold text-black dark:text-white">32</div>
+                <div className="text-[6px] text-gray-400">Items</div>
+                <div className="text-[8px] font-bold text-black dark:text-white">5</div>
               </div>
               <div className="bg-gray-50 dark:bg-gray-700/50 rounded p-1 text-center">
-                <div className="text-[6px] text-gray-400">Blood</div>
-                <div className="text-[8px] font-bold text-primary-600">B+</div>
+                <div className="text-[6px] text-gray-400">Total</div>
+                <div className="text-[8px] font-bold text-emerald-600">₹640</div>
               </div>
             </div>
-            <div className="text-[7px] font-semibold text-black dark:text-white">Medical History</div>
+            <div className="text-[7px] font-semibold text-black dark:text-white">Kitchen Queue</div>
             <div className="space-y-1">
-              <div className="bg-primary-500/5 rounded p-1.5">
-                <div className="text-[6px] font-medium text-black dark:text-white">Cardiology Checkup</div>
-                <div className="text-[5px] text-gray-400">15 Jan 2024</div>
+              <div className="bg-emerald-500/5 rounded p-1.5 flex items-center justify-between">
+                <div>
+                  <div className="text-[6px] font-medium text-black dark:text-white">Paneer Tikka × 1</div>
+                  <div className="text-[5px] text-gray-400">Less spicy</div>
+                </div>
+                <span className="text-[5px] bg-emerald-100 dark:bg-emerald-500/20 text-emerald-700 dark:text-emerald-400 px-1 py-0.5 rounded-full">Ready</span>
               </div>
-              <div className="bg-emerald-500/5 rounded p-1.5">
-                <div className="text-[6px] font-medium text-black dark:text-white">Blood Test - Normal</div>
-                <div className="text-[5px] text-gray-400">02 Jan 2024</div>
+              <div className="bg-amber-500/5 rounded p-1.5 flex items-center justify-between">
+                <div>
+                  <div className="text-[6px] font-medium text-black dark:text-white">Butter Chicken × 2</div>
+                  <div className="text-[5px] text-gray-400">Full · extra gravy</div>
+                </div>
+                <span className="text-[5px] bg-amber-100 dark:bg-amber-500/20 text-amber-600 dark:text-amber-400 px-1 py-0.5 rounded-full">Cooking</span>
               </div>
-              <div className="bg-amber-500/5 rounded p-1.5">
-                <div className="text-[6px] font-medium text-black dark:text-white">General Consultation</div>
-                <div className="text-[5px] text-gray-400">20 Dec 2023</div>
+              <div className="bg-orange-500/5 rounded p-1.5 flex items-center justify-between">
+                <div>
+                  <div className="text-[6px] font-medium text-black dark:text-white">Masala Chai × 2</div>
+                  <div className="text-[5px] text-gray-400">Kullhad</div>
+                </div>
+                <span className="text-[5px] bg-orange-100 dark:bg-orange-500/20 text-orange-600 dark:text-orange-400 px-1 py-0.5 rounded-full">New</span>
               </div>
             </div>
           </div>
@@ -348,9 +361,153 @@ function VisitorDeskPhones() {
   );
 }
 
+/* ── TrackDesk Laptop + Phone Mockups ── */
+function TrackDeskScreens() {
+  const activity = [
+    { app: "VS Code", pct: 42, tone: "bg-violet-500" },
+    { app: "Chrome", pct: 28, tone: "bg-sky-500" },
+    { app: "Slack", pct: 18, tone: "bg-emerald-500" },
+    { app: "Idle", pct: 12, tone: "bg-gray-300 dark:bg-gray-600" },
+  ];
+
+  return (
+    <div className="flex items-center justify-center gap-2 sm:gap-3 md:gap-5 py-6 bg-gradient-to-br from-violet-50 via-indigo-50 to-sky-50 dark:from-violet-500/10 dark:via-gray-900 dark:to-gray-900 rounded-2xl px-2 sm:px-4 overflow-x-auto">
+      {/* Phone: Task Assignment */}
+      <div className="w-[100px] sm:w-[120px] md:w-[140px] flex-shrink-0" style={{ transform: "rotate(-5deg)" }}>
+        <div className="bg-white dark:bg-gray-800 rounded-[20px] shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden">
+          <div className="bg-slate-900 h-6 flex items-center justify-center">
+            <span className="text-white text-[7px] font-bold">My Tasks</span>
+          </div>
+          <div className="p-2.5 space-y-2">
+            <div className="flex items-center justify-between">
+              <div className="text-[8px] font-bold text-black dark:text-white">Assigned</div>
+              <div className="text-[6px] text-violet-500 font-bold">4 open</div>
+            </div>
+            <div className="bg-violet-500/5 border border-violet-500/20 rounded-lg p-1.5 space-y-1">
+              <div className="text-[7px] font-bold text-black dark:text-white">API integration</div>
+              <div className="flex items-center justify-between">
+                <span className="text-[5px] bg-red-100 dark:bg-red-500/20 text-red-600 dark:text-red-400 px-1 py-0.5 rounded-full">Today</span>
+                <span className="text-[5px] text-gray-400">Ankit R.</span>
+              </div>
+            </div>
+            <div className="bg-gray-50 dark:bg-gray-700/50 border border-gray-100 dark:border-gray-600 rounded-lg p-1.5 space-y-1">
+              <div className="text-[7px] font-bold text-black dark:text-white">QA regression</div>
+              <div className="flex items-center justify-between">
+                <span className="text-[5px] bg-amber-100 dark:bg-amber-500/20 text-amber-600 dark:text-amber-400 px-1 py-0.5 rounded-full">Tomorrow</span>
+                <span className="text-[5px] text-gray-400">Priya S.</span>
+              </div>
+            </div>
+            <div className="bg-gray-50 dark:bg-gray-700/50 border border-gray-100 dark:border-gray-600 rounded-lg p-1.5 space-y-1">
+              <div className="text-[7px] font-bold text-black dark:text-white">Deploy staging</div>
+              <div className="flex items-center justify-between">
+                <span className="text-[5px] bg-green-100 dark:bg-green-500/20 text-green-700 dark:text-green-400 px-1 py-0.5 rounded-full">Done</span>
+                <span className="text-[5px] text-gray-400">Manoj V.</span>
+              </div>
+            </div>
+            <div className="bg-violet-500/10 rounded-lg p-1.5 text-center">
+              <div className="text-[7px] font-bold text-violet-500">+ Assign Task</div>
+            </div>
+          </div>
+          <div className="bg-gray-50 dark:bg-gray-700/50 h-5 flex items-center justify-center gap-3">
+            <div className="w-3 h-0.5 bg-gray-300 dark:bg-gray-600 rounded" />
+            <div className="w-1 h-1 bg-gray-300 dark:bg-gray-600 rounded-full" />
+            <div className="w-1 h-1 bg-gray-300 dark:bg-gray-600 rounded-full" />
+          </div>
+        </div>
+      </div>
+
+      {/* Laptop: Activity Monitor */}
+      <div className="w-[170px] sm:w-[210px] md:w-[250px] flex-shrink-0 relative z-10" style={{ transform: "translateY(-6px)" }}>
+        {/* Screen */}
+        <div className="bg-slate-900 rounded-t-[10px] p-[5px] shadow-2xl">
+          <div className="bg-white dark:bg-gray-800 rounded-[5px] overflow-hidden">
+            {/* Title bar */}
+            <div className="bg-slate-900 h-5 flex items-center px-2 gap-1">
+              <div className="w-1 h-1 rounded-full bg-red-400" />
+              <div className="w-1 h-1 rounded-full bg-amber-400" />
+              <div className="w-1 h-1 rounded-full bg-emerald-400" />
+              <span className="text-white text-[6px] font-bold ml-1.5">TrackDesk</span>
+              <span className="text-white/50 text-[6px]">|</span>
+              <span className="text-white text-[6px]">Activity Monitor</span>
+              <span className="ml-auto flex items-center gap-1">
+                <span className="w-1 h-1 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="text-emerald-400 text-[5px] font-bold">LIVE</span>
+              </span>
+            </div>
+
+            <div className="p-2 space-y-1.5">
+              {/* Stat row */}
+              <div className="grid grid-cols-4 gap-1">
+                <div className="bg-violet-500/10 rounded p-1 text-center">
+                  <div className="text-violet-500 font-black text-[9px]">24</div>
+                  <div className="text-[4px] text-gray-500">Online</div>
+                </div>
+                <div className="bg-emerald-500/10 rounded p-1 text-center">
+                  <div className="text-emerald-500 font-black text-[9px]">86%</div>
+                  <div className="text-[4px] text-gray-500">Productive</div>
+                </div>
+                <div className="bg-amber-500/10 rounded p-1 text-center">
+                  <div className="text-amber-500 font-black text-[9px]">7h 12m</div>
+                  <div className="text-[4px] text-gray-500">Avg Hours</div>
+                </div>
+                <div className="bg-gray-100 dark:bg-gray-700/50 rounded p-1 text-center">
+                  <div className="text-gray-600 dark:text-gray-300 font-black text-[9px]">38m</div>
+                  <div className="text-[4px] text-gray-500">Idle</div>
+                </div>
+              </div>
+
+              {/* App usage bars */}
+              <div className="bg-gray-50 dark:bg-gray-700/40 rounded p-1.5 space-y-1">
+                <div className="text-[6px] font-bold text-black dark:text-white">App &amp; Website Usage</div>
+                {activity.map((a) => (
+                  <div key={a.app} className="flex items-center gap-1">
+                    <div className="text-[5px] text-gray-500 w-9 flex-shrink-0">{a.app}</div>
+                    <div className="flex-1 h-1 bg-gray-200 dark:bg-gray-600 rounded-full overflow-hidden">
+                      <div className={`h-full rounded-full ${a.tone}`} style={{ width: `${a.pct}%` }} />
+                    </div>
+                    <div className="text-[5px] text-gray-400 w-4 text-right flex-shrink-0">{a.pct}%</div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Employee rows */}
+              <div className="space-y-1">
+                <div className="bg-emerald-500/5 border border-emerald-500/20 rounded p-1 flex items-center gap-1">
+                  <div className="w-3.5 h-3.5 bg-emerald-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+                    <span className="text-[4px] font-bold text-emerald-600">AR</span>
+                  </div>
+                  <div className="min-w-0">
+                    <div className="text-[6px] font-bold text-black dark:text-white truncate">Ankit Rawat</div>
+                    <div className="text-[5px] text-gray-400 truncate">VS Code &middot; 3 tasks active</div>
+                  </div>
+                  <span className="ml-auto text-[4px] bg-green-100 dark:bg-green-500/20 text-green-700 dark:text-green-400 px-1 py-0.5 rounded-full flex-shrink-0">ACTIVE</span>
+                </div>
+                <div className="bg-gray-50 dark:bg-gray-700/50 border border-gray-100 dark:border-gray-600 rounded p-1 flex items-center gap-1">
+                  <div className="w-3.5 h-3.5 bg-violet-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+                    <span className="text-[4px] font-bold text-violet-600">PS</span>
+                  </div>
+                  <div className="min-w-0">
+                    <div className="text-[6px] font-bold text-black dark:text-white truncate">Priya Sharma</div>
+                    <div className="text-[5px] text-gray-400 truncate">Figma &middot; 1 task overdue</div>
+                  </div>
+                  <span className="ml-auto text-[4px] bg-amber-100 dark:bg-amber-500/20 text-amber-600 dark:text-amber-400 px-1 py-0.5 rounded-full flex-shrink-0">IDLE 6m</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* Laptop base */}
+        <div className="h-1.5 bg-slate-700 rounded-b-[10px]" />
+        <div className="h-1 w-[55%] mx-auto bg-slate-800 rounded-b-[6px] shadow-lg" />
+      </div>
+    </div>
+  );
+}
+
 const phoneMockups: Record<string, React.ReactNode> = {
   VisitorDesk: <VisitorDeskPhones />,
-  CareDesk: <CareDeskPhones />,
+  OrderDesk: <OrderDeskPhones />,
+  TrackDesk: <TrackDeskScreens />,
 };
 
 export default function SaasPreview() {
@@ -367,7 +524,9 @@ export default function SaasPreview() {
         />
 
         <div className="space-y-12">
-          {products.map((product, index) => (
+          {products.map((product, index) => {
+            const theme = themeFor(product.color);
+            return (
             <motion.div
               key={product.name}
               initial={{ opacity: 0, y: 30 }}
@@ -378,9 +537,7 @@ export default function SaasPreview() {
             >
               {/* Accent Glow */}
               <div
-                className={`absolute -top-20 -right-20 w-40 h-40 rounded-full blur-[80px] opacity-20 ${
-                  product.color === "blue" ? "bg-primary-500" : "bg-emerald-500"
-                }`}
+                className={`absolute -top-20 -right-20 w-40 h-40 rounded-full blur-[80px] opacity-20 ${theme.glow}`}
               />
 
               <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
@@ -389,11 +546,7 @@ export default function SaasPreview() {
                   {/* Product Badge */}
                   <div className="flex items-center gap-3 mb-6">
                     <span
-                      className={`px-3 py-1 text-xs font-bold rounded-full ${
-                        product.color === "blue"
-                          ? "bg-primary-50 text-primary-600 border border-primary-100"
-                          : "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
-                      }`}
+                      className={`px-3 py-1 text-xs font-bold rounded-full ${theme.badge}`}
                     >
                       {product.name}
                     </span>
@@ -418,11 +571,7 @@ export default function SaasPreview() {
                         className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300"
                       >
                         <svg
-                          className={`w-4 h-4 flex-shrink-0 ${
-                            product.color === "blue"
-                              ? "text-primary-600"
-                              : "text-emerald-400"
-                          }`}
+                          className={`w-4 h-4 flex-shrink-0 ${theme.icon}`}
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -441,7 +590,7 @@ export default function SaasPreview() {
 
                   <Button
                     href="/saas-solutions"
-                    variant={product.color === "blue" ? "primary" : "outline"}
+                    variant={theme.buttonVariant}
                     size="sm"
                   >
                     Learn More
@@ -463,7 +612,8 @@ export default function SaasPreview() {
                 </motion.div>
               </div>
             </motion.div>
-          ))}
+            );
+          })}
         </div>
       </Container>
     </section>
