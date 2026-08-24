@@ -6,6 +6,7 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import Button from "@/components/ui/Button";
 import CTASection from "@/components/sections/CTASection";
 import { products } from "@/lib/constants";
+import { themeFor } from "@/components/ui/productTheme";
 
 const techStack = [
   "React / Next.js",
@@ -50,7 +51,9 @@ export default function SaasContent() {
       <section className="section-padding bg-gray-50 dark:bg-gray-900">
         <Container>
           <div className="space-y-16">
-            {products.map((product) => (
+            {products.map((product) => {
+              const theme = themeFor(product.color);
+              return (
               <motion.div
                 key={product.name}
                 initial={{ opacity: 0, y: 30 }}
@@ -59,11 +62,11 @@ export default function SaasContent() {
                 transition={{ duration: 0.6 }}
                 className="glass-card p-8 lg:p-12 relative overflow-hidden"
               >
-                <div className={`absolute -top-20 -right-20 w-60 h-60 rounded-full blur-[100px] opacity-15 ${product.color === "blue" ? "bg-primary-500" : "bg-emerald-500"}`} />
+                <div className={`absolute -top-20 -right-20 w-60 h-60 rounded-full blur-[100px] opacity-15 ${theme.glow}`} />
 
                 <div className="relative z-10">
                   <div className="flex items-center gap-4 mb-6">
-                    <span className={`px-4 py-1.5 text-sm font-bold rounded-full ${product.color === "blue" ? "bg-primary-50 text-primary-600 border border-primary-100" : "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"}`}>
+                    <span className={`px-4 py-1.5 text-sm font-bold rounded-full ${theme.badge}`}>
                       {product.name}
                     </span>
                     <span className="text-gray-500 dark:text-gray-400 text-sm">SaaS Platform</span>
@@ -72,7 +75,7 @@ export default function SaasContent() {
                   <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3">
                     {product.fullName}
                   </h2>
-                  <p className={`text-lg font-medium mb-4 ${product.color === "blue" ? "text-primary-600" : "text-emerald-400"}`}>
+                  <p className={`text-lg font-medium mb-4 ${theme.tagline}`}>
                     {product.tagline}
                   </p>
                   <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-8 max-w-3xl">
@@ -82,7 +85,7 @@ export default function SaasContent() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
                     {product.features.map((feature) => (
                       <div key={feature} className="flex items-center gap-3 text-gray-700 dark:text-gray-300">
-                        <svg className={`w-5 h-5 flex-shrink-0 ${product.color === "blue" ? "text-primary-600" : "text-emerald-400"}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className={`w-5 h-5 flex-shrink-0 ${theme.icon}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7"/>
                         </svg>
                         <span className="text-sm">{feature}</span>
@@ -90,7 +93,7 @@ export default function SaasContent() {
                     ))}
                   </div>
 
-                  <Button href="/contact" variant={product.color === "blue" ? "primary" : "outline"}>
+                  <Button href="/contact" variant={theme.buttonVariant}>
                     Request Demo
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3"/>
@@ -98,7 +101,8 @@ export default function SaasContent() {
                   </Button>
                 </div>
               </motion.div>
-            ))}
+              );
+            })}
           </div>
         </Container>
       </section>

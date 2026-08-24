@@ -51,7 +51,7 @@ const values = [
 
 const milestones = [
   { year: "Founded", title: "Kreotek Technologies Launched", description: "Started with a vision to build enterprise-quality technology accessible to all businesses." },
-  { year: "Products", title: "SaaS Products Built", description: "Developed VisitorDesk and CareDesk platforms — production-ready solutions for healthcare and enterprise sectors." },
+  { year: "Products", title: "SaaS Products Built", description: "Developed VisitorDesk, OrderDesk and TrackDesk platforms — production-ready solutions for enterprise visitor management, restaurant QR ordering and workforce monitoring." },
   { year: "Expanding", title: "Growing Service Portfolio", description: "Building a full-stack service offering with 24/7 support and modern cloud-native architecture." },
   { year: "Future", title: "AI-Powered Ecosystem", description: "Building next-generation AI-integrated platforms for the future of business." },
 ];

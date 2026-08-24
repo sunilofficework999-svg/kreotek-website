@@ -59,9 +59,10 @@ export default function ServicesGrid() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
-              className="group glass-card p-8 hover:border-primary-500/30 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300"
+              whileHover={{ scale: 1.03, transition: { duration: 0.25, delay: 0 } }}
+              className="group glass-card p-8 bg-primary-50/40 dark:bg-gray-900"
             >
-              <div className="w-14 h-14 rounded-xl bg-primary-50 dark:bg-primary-500/10 flex items-center justify-center text-primary-600 mb-5 group-hover:bg-primary-100 dark:group-hover:bg-primary-500/20 transition-colors">
+              <div className="w-14 h-14 rounded-xl bg-white dark:bg-primary-500/10 flex items-center justify-center text-primary-600 mb-5">
                 {iconMap[service.icon]}
               </div>
               <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
@@ -74,7 +75,7 @@ export default function ServicesGrid() {
                 {service.features.map((feature) => (
                   <span
                     key={feature}
-                    className="px-3 py-1 text-xs bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full border border-gray-200 dark:border-gray-700"
+                    className="px-3 py-1 text-xs bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full border border-primary-200/60 dark:border-gray-700"
                   >
                     {feature}
                   </span>

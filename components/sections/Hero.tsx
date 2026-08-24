@@ -80,7 +80,7 @@ function HeroIllustration() {
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section className="relative flex items-center overflow-hidden xl:min-h-screen">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-white dark:bg-gray-950" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-primary-50 dark:bg-primary-500/10 rounded-full blur-[120px]" />
@@ -96,16 +96,16 @@ export default function Hero() {
         }}
       />
 
-      <div className="container-custom section-padding relative z-10 pt-24 sm:pt-32">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="container-custom px-4 sm:px-6 lg:px-8 relative z-10 pt-28 sm:pt-32 pb-16 xl:py-28">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 xl:gap-12 items-center">
           {/* Left: Content */}
-          <div className="text-center lg:text-left">
+          <div className="text-center xl:text-left">
             {/* Headline */}
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 dark:text-white leading-[1.1] mb-6"
+              className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-gray-900 dark:text-white leading-[1.1] mb-6"
             >
               We Build Technology
               <br />
@@ -117,7 +117,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto lg:mx-0 mb-10 leading-relaxed"
+              className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto xl:mx-0 mb-10 leading-relaxed"
             >
               From enterprise software to SaaS platforms — we deliver production-ready
               digital solutions with the quality of a Fortune 500 and the speed of a startup.
@@ -128,7 +128,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-12"
+              className="flex flex-col sm:flex-row items-center justify-center xl:justify-start gap-4 mb-12"
             >
               <Button href="/contact" size="lg">
                 Start Your Project
@@ -149,7 +149,7 @@ export default function Hero() {
               className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6"
             >
               {stats.map((stat, index) => (
-                <div key={index} className="text-center lg:text-left">
+                <div key={index} className="text-center xl:text-left">
                   <div className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-1">
                     {stat.value}
                   </div>
@@ -164,7 +164,7 @@ export default function Hero() {
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="hidden lg:block"
+            className="hidden xl:block"
           >
             <HeroIllustration />
           </motion.div>
